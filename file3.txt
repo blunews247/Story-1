@@ -369,34 +369,3 @@ LiveScore.prototype.onCricketHandleResponse = function(session,message){
 		}
 	} catch (e){
 		global.log("sports-update@sagarmatha.org : exception triggering score update "  + e);
-	}
-}
-
-LiveScore.prototype.isInternational = function(team1,team2){	
-	
-	var international = false;
-	try{	
-		for(var i = 0; i < InternationalTeams.length; i++){
-			
-			if(team1 == InternationalTeams[i] || team2 == InternationalTeams[i]){
-				international = true;
-				break;
-			}
-		}
-		
-		return international;
-	}
-	catch (e){
-		global.log("sports-update@sagarmatha.org : Error parsing cricket updates "  + e);
-		return international;
-	}	
-}
-
-LiveScore.prototype.isIPL = function(team1,team2){
-	try{	
-		var ipl = false;
-		for(var i = 0; i < ipl.length; i++){
-				
-			if(team1 == ipl[i] || team2 == ipl[i]){
-				ipl = true;
-				break;
